@@ -1,0 +1,19 @@
+.App {
+    
+    background: #282c34;
+    color: #fff;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.App h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+.hrline {
+    background: red;
+
+}
