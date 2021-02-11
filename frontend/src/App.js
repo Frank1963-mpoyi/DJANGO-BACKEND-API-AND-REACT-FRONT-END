@@ -31,6 +31,20 @@ function App() {
 
   }, [])
 
+  // For automatic update in UI
+  const UpdatedInformation = (article) => {
+    const new_article = articles.map(myarticle => {
+      if (myarticle.id === article.id) {
+        return article;
+      }
+      else {
+        return myarticle;
+      }
+    })
+    setArticles(new_article)
+  }
+
+
 
   // For update article
   const editBtn = (article) => { //send editBtn to ArticleList
@@ -46,7 +60,7 @@ function App() {
       {/* <Navbar        name= "Paulin Mpoyi is the family name" /> */}
 
       <ArticleList articles={articles} editBtn = {editBtn}/>
-      <Form  article={editArticle}/>
+      {editArticle ? <Form  article={editArticle}  UpdatedInformation={ UpdatedInformation}/> : null}
     
     </div>
     
